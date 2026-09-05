@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>保障小卡製作所</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="editor" aria-label="編輯保單資訊">
+        <div class="brand"><span class="brand-mark">✦</span><span>保障小卡製作所</span></div>
+        <div class="intro">
+          <p class="eyebrow">INSURANCE POSTER MAKER</p>
+          <h1>把安心，做成<br />一張好看的圖。</h1>
+          <p>調整文字與數字，即時產生專屬保障摘要。</p>
+        </div>
+
+        <form id="poster-form">
+          <section class="form-section">
+            <div class="section-heading"><span>基本資料</span><i></i></div>
+            <label>保戶姓名<input data-field="name" value="李靜怡" maxlength="12" /></label>
+            <label>健診時間<input data-field="date" value="2026.8.15" maxlength="14" /></label>
+            <label>主標題<input data-field="headline" value="你的六大保障" maxlength="16" /></label>
+            <label>副標題<input data-field="subhead" value="一眼看懂" maxlength="14" /></label>
+          </section>
+          <section class="form-section">
+            <div class="section-heading"><span>保障額度</span><i></i></div>
+            <div class="field-grid">
+              <label>壽險（萬元）<input data-field="life" type="number" value="10" min="0" max="9999" /></label>
+              <label>意外身故（萬元）<input data-field="accident" type="number" value="100" min="0" max="9999" /></label>
+              <label>住院日額（元）<input data-field="hospital" type="number" value="3200" min="0" max="999999" /></label>
+              <label>重大疾病（萬元）<input data-field="critical" type="number" value="200" min="0" max="9999" /></label>
+              <label>失能總額（萬元）<input data-field="disability" type="number" value="900" min="0" max="9999" /></label>
+              <label>癌症一次給付（萬元）<input data-field="cancer" type="number" value="20" min="0" max="9999" /></label>
+            </div>
+          </section>
+          <section class="form-section accent-section">
+            <div class="section-heading"><span>頁尾訊息</span><i></i></div>
+            <label>行動呼籲<input data-field="footer" value="一份保單，守護現在，也守護未來" maxlength="34" /></label>
+          </section>
+        </form>
+        <button class="download" id="download" type="button"><span>⇩</span> 下載 JPG 圖檔</button>
+        <p class="hint">輸出尺寸 1200 × 1600 px ・適合傳送與列印</p>
+      </aside>
+
+      <section class="workspace">
+        <header><div><p class="eyebrow">LIVE PREVIEW</p><h2>您的保障摘要</h2></div><span class="status"><b></b> 已儲存變更</span></header>
+        <div class="canvas-wrap"><canvas id="poster" width="1200" height="1600" aria-label="保單資訊海報預覽"></canvas></div>
+        <p class="preview-hint">所有修改都會即時同步到右側預覽</p>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
